@@ -25,64 +25,80 @@ class HomeScreen extends GetView {
               SizedBox(height: Get.size.height * 0.02),
               ElevatedButton(
                 onPressed: () => Get.bottomSheet(
+                  backgroundColor: Colors.black26,
+                  shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20.0),
+                    topRight: Radius.circular(20.0),
+                  )),
                   SizedBox(
-                    height: Get.size.height * .08,
+                    height: Get.size.height * .15,
                     width: Get.size.width,
                     child: Flex(
-                      direction: Axis.horizontal,
+                      direction: Axis.vertical,
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Flexible(
-                          flex: 1,
-                          child: Container(
-                            height: Get.size.height * .08,
-                            color: Colors.pink,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                IconButton(
-                                  constraints: const BoxConstraints(),
-                                  padding: const EdgeInsets.all(0.0),
-                                  onPressed: () {
-                                    Get.changeTheme(ThemeData.light());
-                                    Get.back();
-                                  },
-                                  icon: Icon(
-                                    Icons.wb_sunny_outlined,
-                                    size: Get.size.width * .05,
-                                  ),
+                        Flex(
+                          direction: Axis.horizontal,
+                          children: [
+                            Flexible(
+                              flex: 1,
+                              child: Container(
+                                height: Get.size.height * .08,
+                                color: Colors.pink,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    IconButton(
+                                      constraints: const BoxConstraints(),
+                                      padding: const EdgeInsets.all(0.0),
+                                      onPressed: () {
+                                        Get.changeTheme(ThemeData.light());
+                                        Get.back();
+                                      },
+                                      icon: Icon(
+                                        Icons.wb_sunny_outlined,
+                                        size: Get.size.width * .05,
+                                      ),
+                                    ),
+                                    IconButton(
+                                      constraints: const BoxConstraints(),
+                                      padding: const EdgeInsets.all(0.0),
+                                      onPressed: () {
+                                        Get.changeTheme(ThemeData.dark());
+                                        Get.back();
+                                      },
+                                      icon: Icon(
+                                        Icons.wb_sunny,
+                                        size: Get.size.width * .05,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                IconButton(
-                                  constraints: const BoxConstraints(),
-                                  padding: const EdgeInsets.all(0.0),
-                                  onPressed: () {
-                                    Get.changeTheme(ThemeData.dark());
-                                    Get.back();
-                                  },
-                                  icon: Icon(
-                                    Icons.wb_sunny,
-                                    size: Get.size.width * .05,
-                                  ),
-                                ),
-                              ],
+                              ),
                             ),
-                          ),
-                        ),
-                        Flexible(
-                          child: Container(
-                            color: Colors.green,
-                          ),
-                        ),
-                        Flexible(
-                          flex: 5,
-                          child: Container(
-                            color: Colors.orange,
-                          ),
-                        ),
-                        Flexible(
-                          child: Container(
-                            color: Colors.red,
-                          ),
+                            Flexible(
+                              child: Container(
+                                height: Get.size.height * .08,
+                                color: Colors.green,
+                              ),
+                            ),
+                            Flexible(
+                              flex: 5,
+                              child: Container(
+                                height: Get.size.height * .08,
+                                color: Colors.orange,
+                              ),
+                            ),
+                            Flexible(
+                              child: Container(
+                                height: Get.size.height * .08,
+                                color: Colors.red,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
